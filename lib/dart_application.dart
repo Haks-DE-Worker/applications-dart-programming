@@ -206,6 +206,35 @@ void main() {
         }
         break;
       case 13:
+        print(
+            'The exercise request us to write a function who take two required arguments and one optional.');
+        void printArguments(int a, int b, [int c = 0]) {
+          print('The first argument is : $a');
+          print('The second argument is : $b');
+          print('The third argument was the optional : $c');
+        }
+        try {
+          print('Print the first argument : ');
+          int a = int.parse(stdin.readLineSync()!);
+          print('Print the second argument : ');
+          int b = int.parse(stdin.readLineSync()!);
+          print('Do you want to give the third argument : ');
+          try {
+            print('Print 1 to accept and any other number to refuse : ');
+            int intention = int.parse(stdin.readLineSync()!);
+            if (intention == 1) {
+              print('Print the third argument : ');
+              int c = int.parse(stdin.readLineSync()!);
+              printArguments(a, b, c);
+            } else {
+              printArguments(a, b);
+            }
+          } on FormatException {
+            print('Invalid choice. Type a valid number.');
+          }
+        } on FormatException {
+          print('Invalid number. Type a valid number.');
+        }
         break;
       case 14:
         break;
