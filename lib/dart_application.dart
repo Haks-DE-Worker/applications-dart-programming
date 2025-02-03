@@ -249,6 +249,18 @@ void main() {
         print('The initial list is : $list');
         print('The sorted list is : ${anonymousFunction(list)}');
         break;
+      case 15:
+        break;
+      case 16:
+        break;
+      case 17:
+        break;
+      case 18:
+        break;
+      case 19:
+        break;
+      case 20:
+        break;
       default:
         print('Invalid exercise number.');
     }
