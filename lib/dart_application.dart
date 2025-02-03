@@ -237,6 +237,17 @@ void main() {
         }
         break;
       case 14:
+        print(
+            'The exercise request us to write an anonymous function to sort a list.');
+        var anonymousFunction = (List<int> list) {
+          list.sort();
+          return list;
+        };
+        Random random = Random();
+        List<int> list =
+            List<int>.generate(10, (_) => random.nextInt(max(12, 99)));
+        print('The initial list is : $list');
+        print('The sorted list is : ${anonymousFunction(list)}');
         break;
       default:
         print('Invalid exercise number.');
