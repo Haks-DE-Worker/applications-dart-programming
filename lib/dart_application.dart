@@ -250,16 +250,14 @@ void main() {
         print('The sorted list is : ${anonymousFunction(list)}');
         break;
       case 15:
-        break;
-      case 16:
-        break;
-      case 17:
-        break;
-      case 18:
-        break;
-      case 19:
-        break;
-      case 20:
+        print(
+            'The exercise request us to write a generic function which take a list of values and retur the first value.');
+        T? getFirstElement<T>(List<T> list) {
+          return list.isNotEmpty ? list.first : null;
+        }
+        List<dynamic> list = [1, "AGNIDE", 3.14, true];
+        print('The list is : $list');
+        print('The first element of the list is : ${getFirstElement(list)}');
         break;
       default:
         print('Invalid exercise number.');
