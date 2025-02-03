@@ -186,6 +186,24 @@ void main() {
         }
         break;
       case 12:
+        int recursiveSummaFunction(int number) {
+          if (number == 1) {
+            return 1;
+          } else {
+            int sum = number + recursiveSummaFunction(number - 1);
+            return sum;
+          }
+        }
+        print(
+            'The exercise request us to write a recursive function to calculate the sum of number between one and a given number.');
+        print('Print a number to calculate the sum of numbers : ');
+        try {
+          int number = int.parse(stdin.readLineSync()!);
+          print(
+              'The sum of numbers from 1 to $number is : ${recursiveSummaFunction(number)}.');
+        } on FormatException {
+          print('Invalid number. Type a valid number.');
+        }
         break;
       case 13:
         break;
