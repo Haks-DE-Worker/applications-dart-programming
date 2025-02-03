@@ -163,6 +163,31 @@ void main() {
         list.sort((a, b) => b.compareTo(a));
         print('The sorted list in descending order is : $list');
         break;
+      case 11:
+        print(
+            'The exercise request us to write a function to determine the factorial of a number.');
+        print('Print a number to calculate its factorial : ');
+        try {
+          int number = int.parse(stdin.readLineSync()!);
+          int factorial = 1;
+          if (number == 0) {
+            print('The factorial of $number is : $factorial');
+          } else {
+            for (int i = 1; i <= number; i++) {
+              factorial *= i;
+            }
+            print('The factorial of $number is : $factorial');
+          }
+        } on FormatException {
+          print('Invalid number. Type a valid number.');
+        }
+        break;
+      case 12:
+        break;
+      case 13:
+        break;
+      case 14:
+        break;
       default:
         print('Invalid exercise number.');
     }
