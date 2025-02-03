@@ -239,6 +239,7 @@ void main() {
       case 14:
         print(
             'The exercise request us to write an anonymous function to sort a list.');
+        // ignore: prefer_function_declarations_over_variables
         var anonymousFunction = (List<int> list) {
           list.sort();
           return list;
