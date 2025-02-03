@@ -72,3 +72,23 @@ class Rectangle implements Forms {
     print('Area of the rectangle: ${length * width}');
   }
 }
+
+// mixins class
+mixin Flying {
+  // A class method
+  String fly() {
+    return 'I can fly';
+  }
+}
+
+// class Bird who uses the mixin Flying
+class Bird with Flying {
+  // class properties
+  String? name;
+
+  // Constructor
+  Bird(String? name) {
+    this.name = name;
+    print('The mixin method return : ${fly()}');
+  }
+}
