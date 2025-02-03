@@ -153,7 +153,15 @@ void main() {
         print(occurrencesMap);
         break;
       case 10:
-        print('Case 10 logic here');
+        print('The exercise request us to sort a list of numbers.');
+        Random random = Random();
+        List<int> list =
+            List<int>.generate(10, (_) => random.nextInt(max(10, 100)));
+        print('The initial list is : $list');
+        list.sort();
+        print('The sorted list in ascending order is : $list');
+        list.sort((a, b) => b.compareTo(a));
+        print('The sorted list in descending order is : $list');
         break;
       default:
         print('Invalid exercise number.');
