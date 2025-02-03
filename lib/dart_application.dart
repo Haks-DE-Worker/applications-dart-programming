@@ -166,9 +166,7 @@ void main() {
       case 11:
         print(
             'The exercise request us to write a function to determine the factorial of a number.');
-        print('Print a number to calculate its factorial : ');
-        try {
-          int number = int.parse(stdin.readLineSync()!);
+        void factorialNumber(int number) {
           int factorial = 1;
           if (number == 0) {
             print('The factorial of $number is : $factorial');
@@ -178,6 +176,11 @@ void main() {
             }
             print('The factorial of $number is : $factorial');
           }
+        }
+        print('Print a number to calculate its factorial : ');
+        try {
+          int number = int.parse(stdin.readLineSync()!);
+          factorialNumber(number);
         } on FormatException {
           print('Invalid number. Type a valid number.');
         }
