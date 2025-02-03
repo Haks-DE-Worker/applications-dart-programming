@@ -132,7 +132,25 @@ void main() {
             'The concatenation of two lists make : $concatList and the common numbers removal make : $commonNumbers');
         break;
       case 9:
-        print('Case 9 logic here');
+        Random random = Random();
+        print(
+            "This exercise make us to count the occurrences of a number in a list after that store its in a Map.");
+        List<int> list = List<int>.generate(12, (_) => random.nextInt(34));
+        List<int> commonNumbers = [];
+        for (int i = 0; i < list.length; i++) {
+          int countOccurrences =
+              list.where((element) => element == list[i]).length;
+          if (countOccurrences >= 1 && !commonNumbers.contains(list[i])) {
+            commonNumbers.add(list[i]);
+          }
+        }
+        commonNumbers.sort();
+        print('We have the initial list : $list');
+        Map<int, int> occurrencesMap = {
+          for (int number in commonNumbers)
+            number: countOccurrences(list, number)
+        };
+        print(occurrencesMap);
         break;
       case 10:
         print('Case 10 logic here');
