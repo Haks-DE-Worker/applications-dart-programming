@@ -5,8 +5,10 @@ import 'dart:math';
 
 void main() {
   // Instance creation
-  Person person = Person('Alice', 30);
-  person.displayInfo(); // Display: Name: Alice, Age: 30
+  // Person person = Person('Alice', 30);
+  // person.displayInfo(); // Display: Name: Alice, Age: 30
+  Configuration config1 = Configuration();
+  Configuration config2 = Configuration();
 }
 
 // Class Person definition
@@ -29,7 +31,7 @@ class Students extends Person {
   int note;
 
   // Constructor
-  Students(String name, int age, this.note) : super(name, age);
+  Students(super.name, super.age, this.note);
 
   // A class method
   void dispalyNote() {
@@ -76,8 +78,8 @@ class Rectangle implements Forms {
 // mixins class
 mixin Flying {
   // A class method
-  String fly() {
-    return 'I can fly';
+  String fly(String what) {
+    return 'I can fly because I\'am a $what';
   }
 }
 
@@ -87,8 +89,23 @@ class Bird with Flying {
   String? name;
 
   // Constructor
-  Bird(String? name) {
-    this.name = name;
-    print('The mixin method return : ${fly()}');
+  Bird(this.name) {
+    String whatIAm = 'Bird';
+    print('The mixin method return : ${fly(whatIAm)}');
+  }
+}
+
+class Configuration {
+  Configuration._privateConstructor();
+
+  static final Configuration _instance = Configuration._privateConstructor();
+
+  factory Configuration() {
+    print('I am in a factory constructor');
+    return _instance;
+  }
+
+  String showSomething() {
+    return "I am in a method of the class";
   }
 }
