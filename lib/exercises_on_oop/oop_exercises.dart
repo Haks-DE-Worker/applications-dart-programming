@@ -76,8 +76,8 @@ class Rectangle implements Forms {
 // mixins class
 mixin Flying {
   // A class method
-  String fly() {
-    return 'I can fly';
+  String fly(String what) {
+    return 'I can fly because I\'am a $what';
   }
 }
 
@@ -89,6 +89,7 @@ class Bird with Flying {
   // Constructor
   Bird(String? name) {
     this.name = name;
-    print('The mixin method return : ${fly()}');
+    String whatIAm = 'Bird';
+    print('The mixin method return : ${fly(whatIAm)}');
   }
 }
