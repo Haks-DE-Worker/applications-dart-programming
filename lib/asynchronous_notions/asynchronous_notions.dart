@@ -10,15 +10,16 @@ void main() async {
   //   await Future.delayed(Duration(seconds: 1));
   //   print(i);
   // }
-  Future<String> firstFuture = combinationAsyncFunction('First', 5);
-  Future<String> secondFuture = combinationAsyncFunction('Second', 3);
-  Future<String> thirdFuture = combinationAsyncFunction('Third', 10);
+  // Future<String> firstFuture = combinationAsyncFunction('First', 5);
+  // Future<String> secondFuture = combinationAsyncFunction('Second', 3);
+  // Future<String> thirdFuture = combinationAsyncFunction('Third', 10);
 
-  List<String> afterTreatment =
-      await Future.wait([firstFuture, secondFuture, thirdFuture]);
-  for (String result in afterTreatment) {
-    print(result);
-  }
+  // List<String> afterTreatment =
+  //     await Future.wait([firstFuture, secondFuture, thirdFuture]);
+  // for (String result in afterTreatment) {
+  //   print(result);
+  // }
+  asyncMethod();
 }
 
 // Simple function that returns a Future
@@ -54,4 +55,11 @@ Future<StreamController<int>> createNumberStream() async {
 Future<String> combinationAsyncFunction(String name, int second) async {
   await Future.delayed(Duration(seconds: second));
   return 'The server work on $name in $second seconds';
+}
+
+// 24- await/async
+Future asyncMethod() async {
+  await Future.delayed(Duration(seconds: 3));
+  print(
+      'This was a method which use async and await keywords to make it asynchronous');
 }
