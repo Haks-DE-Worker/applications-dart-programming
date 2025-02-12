@@ -1,24 +1,24 @@
 import 'dart:async';
 
 void main() async {
-  // print('Getting data ...');
-  // String data = await asyncFunction();
-  // print('Data: $data');
-  // print(await simulateAnOperation(11, 22));
-  // StreamController<int> numberStream = await createNumberStream();
-  // await for (int i in numberStream.stream) {
-  //   await Future.delayed(Duration(seconds: 1));
-  //   print(i);
-  // }
-  // Future<String> firstFuture = combinationAsyncFunction('First', 5);
-  // Future<String> secondFuture = combinationAsyncFunction('Second', 3);
-  // Future<String> thirdFuture = combinationAsyncFunction('Third', 10);
+  print('Getting data ...');
+  String data = await asyncFunction();
+  print('Data: $data');
+  print(await simulateAnOperation(11, 22));
+  StreamController<int> numberStream = await createNumberStream();
+  await for (int i in numberStream.stream) {
+    await Future.delayed(Duration(seconds: 1));
+    print(i);
+  }
+  Future<String> firstFuture = combinationAsyncFunction('First', 5);
+  Future<String> secondFuture = combinationAsyncFunction('Second', 3);
+  Future<String> thirdFuture = combinationAsyncFunction('Third', 10);
 
-  // List<String> afterTreatment =
-  //     await Future.wait([firstFuture, secondFuture, thirdFuture]);
-  // for (String result in afterTreatment) {
-  //   print(result);
-  // }
+  List<String> afterTreatment =
+      await Future.wait([firstFuture, secondFuture, thirdFuture]);
+  for (String result in afterTreatment) {
+    print(result);
+  }
   asyncMethod();
 }
 
