@@ -5,10 +5,19 @@ void main() async {
   // String data = await asyncFunction();
   // print('Data: $data');
   // print(await simulateAnOperation(11, 22));
-  StreamController<int> numberStream = await createNumberStream();
-  await for (int i in numberStream.stream) {
-    await Future.delayed(Duration(seconds: 1));
-    print(i);
+  // StreamController<int> numberStream = await createNumberStream();
+  // await for (int i in numberStream.stream) {
+  //   await Future.delayed(Duration(seconds: 1));
+  //   print(i);
+  // }
+  Future<String> firstFuture = combinationAsyncFunction('First', 5);
+  Future<String> secondFuture = combinationAsyncFunction('Second', 3);
+  Future<String> thirdFuture = combinationAsyncFunction('Third', 10);
+
+  List<String> afterTreatment =
+      await Future.wait([firstFuture, secondFuture, thirdFuture]);
+  for (String result in afterTreatment) {
+    print(result);
   }
 }
 
@@ -39,4 +48,10 @@ Future<StreamController<int>> createNumberStream() async {
   }
   numberStream.close();
   return numberStream;
+}
+
+// 24- Futures.wait illustration : Future Combinations
+Future<String> combinationAsyncFunction(String name, int second) async {
+  await Future.delayed(Duration(seconds: second));
+  return 'The server work on $name in $second seconds';
 }
